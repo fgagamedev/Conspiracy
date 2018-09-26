@@ -1,7 +1,8 @@
 #include "camera.hpp"
+#include "config.h"
 
 
-#define FILENAME "assets/sprites/camera(11X8).png"
+#define FILENAME ASSETS_PATH("/sprites/camera(11X8).png")
 #define WIDTH 11
 #define HEIGHT 8
 

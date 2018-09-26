@@ -29,7 +29,7 @@ GameScene::GameScene(int id, std::string newTiledFile) : Scene(id){
 }
 
 GameScene::GameScene(int id, std::string newTiledFile, std::string audioFile) : Scene(id){
-    if(audioFile == "assets/sounds/TEMA3.wav"){
+    if(audioFile == ASSETS_PATH("/sounds/TEMA3.wav")){
         background_music = new Audio(audioFile, "MUSIC", 55);
     }else{
         background_music = new Audio(audioFile, "MUSIC", 75);
@@ -170,19 +170,19 @@ void GameScene::createChairs(){}
 
 void GameScene::createGameBorders(){
         for(int i=0; i<=960; i+=5) {
-                gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", i, HEADER_SIZE + 0, 5, 20));
-                gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", i, HEADER_SIZE + 595, 5, 5));
+                gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), i, HEADER_SIZE + 0, 5, 20));
+                gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), i, HEADER_SIZE + 595, 5, 5));
         }
         for(int j=0; j<=600; j+=5) {
-                gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", 955, HEADER_SIZE + j, 5, 5));
-                gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", 0, HEADER_SIZE + j, 5, 5));
+                gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), 955, HEADER_SIZE + j, 5, 5));
+                gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), 0, HEADER_SIZE + j, 5, 5));
         }
 }
 
 void GameScene::createGround(){
         for(int i=0; i<=960; i+=20) {
                 for(int j=0; j<=600; j+=20) {
-                        gameObjectsList.push_back(new Ground("assets/sprites/cenary/chao.png", i, HEADER_SIZE + j, 20, 20));
+                        gameObjectsList.push_back(new Ground(ASSETS_PATH("/sprites/cenary/chao.png"), i, HEADER_SIZE + j, 20, 20));
                 }
         }
 }
@@ -198,32 +198,32 @@ void GameScene::createCenary(){
                 tile_file.get(c);
                 compare = c-48;
                 switch(compare) {
-                    case 1: gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede2.png", j, HEADER_SIZE + i+25, 20, 40)); break;
+                    case 1: gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede2.png"), j, HEADER_SIZE + i+25, 20, 40)); break;
 
-                    case 2: gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE + i, 0, 0));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE + i+5, 5, 15));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE + i+10, 5, 15));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE + i+15, 5, 30));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE + i-5, 0, 0));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE + i-10, 0, 0));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE + i-15, 0, 0)); break;
+                    case 2: gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE + i, 0, 0));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE + i+5, 5, 15));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE + i+10, 5, 15));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE + i+15, 5, 30));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE + i-5, 0, 0));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE + i-10, 0, 0));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE + i-15, 0, 0)); break;
 
-                    case 3: gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i+15, 5, 5));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+5, HEADER_SIZE + i+15, 5, 5));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+10, HEADER_SIZE + i+15, 5, 5));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j+15, HEADER_SIZE +i+15, 5, 5)); break;
+                    case 3: gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i+15, 5, 5));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+5, HEADER_SIZE + i+15, 5, 5));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+10, HEADER_SIZE + i+15, 5, 5));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j+15, HEADER_SIZE +i+15, 5, 5)); break;
 
-                    case 4: gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i, 0, 0));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i+5, 5, 15));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i+10, 5, 15));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i+15, 5, 30));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i-5, 0, 0));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i-10, 0, 0));
-                            gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_cima1.png", j, HEADER_SIZE + i-15, 0, 0)); break;
+                    case 4: gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i, 0, 0));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i+5, 5, 15));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i+10, 5, 15));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i+15, 5, 30));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i-5, 0, 0));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i-10, 0, 0));
+                            gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_cima1.png"), j, HEADER_SIZE + i-15, 0, 0)); break;
 
-                    case 5: gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_door.png", j+15, HEADER_SIZE + i-20, 5, 60)); break;
+                    case 5: gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_door.png"), j+15, HEADER_SIZE + i-20, 5, 60)); break;
 
-                    case 6: gameObjectsList.push_back(new Wall("assets/sprites/cenary/parede_door.png", j, HEADER_SIZE + i-20, 5, 60));break;
+                    case 6: gameObjectsList.push_back(new Wall(ASSETS_PATH("/sprites/cenary/parede_door.png"), j, HEADER_SIZE + i-20, 5, 60));break;
                 }
             }
         }

@@ -1,8 +1,9 @@
 #include "alien_etemer.hpp"
 #include "chair.hpp"
 #include "guard.hpp"
+#include "config.h"
 
-#define FILENAME "assets/sprites/etemer_sheet.png"
+#define FILENAME ASSETS_PATH("/sprites/etemer_sheet.png")
 #define WIDTH 10
 #define HEIGHT 22
 

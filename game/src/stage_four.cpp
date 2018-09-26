@@ -1,10 +1,11 @@
 #include "stage_four.hpp"
+#include "config.h"
 #include "chair.hpp"
 
 using namespace engine;
 #define PAPERQUANTITY 3
 #define STAGENUMBER 4
-StageFour::StageFour(int id, std::string newTiledFile) : GameScene (id, newTiledFile, "assets/sounds/TEMA4.wav"){
+StageFour::StageFour(int id, std::string newTiledFile) : GameScene (id, newTiledFile, ASSETS_PATH("/sounds/TEMA4.wav")){
 
 }
 

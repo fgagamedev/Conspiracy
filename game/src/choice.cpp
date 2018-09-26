@@ -1,4 +1,5 @@
 #include "choice.hpp"
+#include "config.h"
 
 Choice::Choice(std::string objectName, double positionX, double positionY,
                                      int width, int height, std::string title, int sizeTitle) : GameObject(objectName,
@@ -6,10 +7,10 @@ Choice::Choice(std::string objectName, double positionX, double positionY,
                                                                          positionY,
                                                                          width, height){
 
-    button = new Button("assets/fonts/font.ttf", positionX + (width/2)*0.4, positionY + height, 200, 150, title, sizeTitle);
+    button = new Button(ASSETS_PATH("/fonts/font.ttf"), positionX + (width/2)*0.4, positionY + height, 200, 150, title, sizeTitle);
     sprite = new Sprite(objectName);
     sprite->setDrawSize(200,150);
-    padlock = new Sprite("assets/sprites/padlock.png");
+    padlock = new Sprite(ASSETS_PATH("/sprites/padlock.png"));
     chosen = false;
     unlock = false;
     rectangle = new Rectangle("Rectangle", positionX, positionY, width, height, true, Color{0, 0, 0, 150});

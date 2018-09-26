@@ -1,15 +1,16 @@
 #include "camera_switch.hpp"
+#include "config.h"
 
 using namespace engine;
 
-#define FILENAME "assets/sprites/cenary/switch_cameras(14X16).png"
+#define FILENAME ASSETS_PATH("/sprites/cenary/switch_cameras(14X16).png")
 #define WIDTH 14
 #define HEIGHT 16
 #define ADJUSTX 10
 CameraSwitch::CameraSwitch(double positionX, double positionY, std::string direction) : GameObject(FILENAME,positionX - ADJUSTX,positionY - ADJUSTX,
                                                                      WIDTH+ADJUSTX*2, HEIGHT+ADJUSTX*2){
     animator = new Animation(FILENAME, 1, 2, 0.1);
-    switchEfffect = new Audio("assets/sounds/TURNOFFCAMERA.wav", "EFFECT", 128);
+    switchEfffect = new Audio(ASSETS_PATH("/sounds/TURNOFFCAMERA.wav"), "EFFECT", 128);
 
     animator->addAction("on", 0,0);
     animator->addAction("off",1,1);

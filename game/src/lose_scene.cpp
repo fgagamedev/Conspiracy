@@ -1,4 +1,5 @@
 #include "lose_scene.hpp"
+#include "config.h"
 #include "button.hpp"
 
 #include <typeinfo>
@@ -7,9 +8,9 @@
 using namespace engine;
 
 LoseScene::LoseScene(int id) : Scene(id){
-    soundEffect = new Audio("assets/sounds/SELECT6.wav", "EFFECT", 100);
-    backgroundMusic = new Audio("assets/sounds/GAMEOVER.wav", "MUSIC", 50);
-    background = new Animation("assets/sprites/lose.png", 1, 4, 0.8);
+    soundEffect = new Audio(ASSETS_PATH("/sounds/SELECT6.wav"), "EFFECT", 100);
+    backgroundMusic = new Audio(ASSETS_PATH("/sounds/GAMEOVER.wav"), "MUSIC", 50);
+    background = new Animation(ASSETS_PATH("/sprites/lose.png"), 1, 4, 0.8);
     background->addAction("lose", 0,3);
     background->setInterval("lose");
 }
@@ -44,8 +45,8 @@ void LoseScene::update(double timeElapsed){
 }
 
 void LoseScene::load(){
-        gameObjectsList.push_back(std::pair<int, GameObject*>(1,new Button("assets/fonts/font.ttf", 700, 500, 500, 500, "Continue", 50)));
-        gameObjectsList.push_back(std::pair<int, GameObject*>(2,new Button("assets/fonts/font.ttf", 50, 500, 500, 500, "Menu", 50)));
+        gameObjectsList.push_back(std::pair<int, GameObject*>(1,new Button(ASSETS_PATH("/fonts/font.ttf"), 700, 500, 500, 500, "Continue", 50)));
+        gameObjectsList.push_back(std::pair<int, GameObject*>(2,new Button(ASSETS_PATH("/fonts/font.ttf"), 50, 500, 500, 500, "Menu", 50)));
         AnimationManager::instance.setBackgroundColor(Color{255,160,156, 125});
         backgroundMusic->play(0);
 

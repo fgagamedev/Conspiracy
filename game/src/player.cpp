@@ -1,11 +1,12 @@
 #include "log.h"
+#include "config.h"
 #include "player.hpp"
 using namespace engine;
 
 Player::Player(std::pair<int, int> biluPosition, std::pair<int, int> etemerPosition,
                std::pair<int,int> varginhaPosition, int paperQuantity, int stageNumber){
 
-        exclamationAnimation = new Animation("assets/sprites/exclamation2.png",1, 1, 0.5);
+        exclamationAnimation = new Animation(ASSETS_PATH("/sprites/exclamation2.png"),1, 1, 0.5);
 
         bilu = new Bilu(biluPosition.first, biluPosition.second);
         varginha = new Varginha(varginhaPosition.first, varginhaPosition.second);
@@ -23,9 +24,9 @@ Player::Player(std::pair<int, int> biluPosition, std::pair<int, int> etemerPosit
         varginha->setAlienDeselect();
         etemer->setAlienSelected();
 
-        bilu_sound_effect = new Audio("assets/sounds/TROCABILU.wav", "EFFECT", 100);
-        varginha_sound_effect = new Audio("assets/sounds/TROCAVARGINHA.wav", "EFFECT", 25);
-        etemer_sound_effect = new Audio("assets/sounds/TROCATEMER.wav", "EFFECT", 75);
+        bilu_sound_effect = new Audio(ASSETS_PATH("/sounds/TROCABILU.wav"), "EFFECT", 100);
+        varginha_sound_effect = new Audio(ASSETS_PATH("/sounds/TROCAVARGINHA.wav"), "EFFECT", 25);
+        etemer_sound_effect = new Audio(ASSETS_PATH("/sounds/TROCATEMER.wav"), "EFFECT", 75);
 }
 
 Player::~Player(){

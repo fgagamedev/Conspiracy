@@ -1,4 +1,5 @@
 #include "finish_point.hpp"
+#include "config.h"
 
 FinishPoint::FinishPoint(std::string objectName, double positionX,
                                                  double positionY,
@@ -10,16 +11,16 @@ FinishPoint::FinishPoint(std::string objectName, double positionX,
                                                                                      width,
                                                                                      height){
     aliens = alienNames;
-    if(objectName.compare("assets/sprites/cenary/tapete.png") == 0){
+    if(objectName.compare(ASSETS_PATH("/sprites/cenary/tapete.png")) == 0){
         animator = new Animation(objectName, 2, 1, 0.5);
         orientation = "UPDOWN";
     }else{
         animator = new Animation(objectName, 1, 2, 0.5);
         orientation = "LEFTRIGHT";
     }
-    etemerAnim = new Animation("assets/sprites/cenary/SAIDA_TEMER.png", 1, 1, 0.5);
-    biluAnim = new Animation("assets/sprites/cenary/SAIDA_BILU.png", 1, 1, 0.5);
-    varginhaAnim = new Animation("assets/sprites/cenary/SAIDA_VARGINHA.png", 1, 1, 0.5);
+    etemerAnim = new Animation(ASSETS_PATH("/sprites/cenary/SAIDA_TEMER.png"), 1, 1, 0.5);
+    biluAnim = new Animation(ASSETS_PATH("/sprites/cenary/SAIDA_BILU.png"), 1, 1, 0.5);
+    varginhaAnim = new Animation(ASSETS_PATH("/sprites/cenary/SAIDA_VARGINHA.png"), 1, 1, 0.5);
 }
 
 void FinishPoint::update(double timeElapsed){

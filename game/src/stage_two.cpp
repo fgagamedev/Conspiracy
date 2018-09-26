@@ -1,9 +1,10 @@
 #include "stage_two.hpp"
+#include "config.h"
 
 using namespace engine;
 #define PAPERQUANTITY 3
 #define STAGENUMBER 2
-StageTwo::StageTwo(int id, std::string newTiledFile) : GameScene (id, newTiledFile, "assets/sounds/TEMA2.wav"){
+StageTwo::StageTwo(int id, std::string newTiledFile) : GameScene (id, newTiledFile, ASSETS_PATH("/sounds/TEMA2.wav")){
 
 }
 

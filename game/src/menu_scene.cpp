@@ -1,4 +1,5 @@
 #include "menu_scene.hpp"
+#include "config.h"
 #include "button.hpp"
 
 #include <typeinfo>
@@ -7,10 +8,10 @@
 using namespace engine;
 
 MenuScene::MenuScene(int id) : Scene(id){
-        background = new Sprite("assets/sprites/background.png");
-        buttonEffect = new Audio("assets/sounds/SELECT6.wav", "EFFECT", 100);
-        selectEffect = new Audio("assets/sounds/SELECT5.wav", "EFFECT", 128);
-        backgroundMusic = new Audio("assets/sounds/MENU.wav", "MUSIC", 100);
+        background = new Sprite(ASSETS_PATH("/sprites/background.png"));
+        buttonEffect = new Audio(ASSETS_PATH("/sounds/SELECT6.wav"), "EFFECT", 100);
+        selectEffect = new Audio(ASSETS_PATH("/sounds/SELECT5.wav"), "EFFECT", 128);
+        backgroundMusic = new Audio(ASSETS_PATH("/sounds/MENU.wav"), "MUSIC", 100);
         SaveManager::instance.verifySave();
 }
 
@@ -80,9 +81,9 @@ void MenuScene::selectAction(){
 }
 
 void MenuScene::load(){
-        gameObjectsList.push_back(std::pair<int, GameObject*>(1, new Button("assets/fonts/font.ttf", 410, 300, 500, 500, "Jogar", 50)));
-        gameObjectsList.push_back(std::pair<int, GameObject*>(2,new Button("assets/fonts/font.ttf", 290, 400, 500, 500, "Selecionar Fase", 50)));
-        gameObjectsList.push_back(std::pair<int, GameObject*>(3,new Button("assets/fonts/font.ttf", 430, 500, 500, 500, "Sair", 50)));
+        gameObjectsList.push_back(std::pair<int, GameObject*>(1, new Button(ASSETS_PATH("/fonts/font.ttf"), 410, 300, 500, 500, "Jogar", 50)));
+        gameObjectsList.push_back(std::pair<int, GameObject*>(2,new Button(ASSETS_PATH("/fonts/font.ttf"), 290, 400, 500, 500, "Selecionar Fase", 50)));
+        gameObjectsList.push_back(std::pair<int, GameObject*>(3,new Button(ASSETS_PATH("/fonts/font.ttf"), 430, 500, 500, 500, "Sair", 50)));
         backgroundMusic->play(-1);
         AnimationManager::instance.setBackgroundColor(Color{100,100,100, 125});
 }

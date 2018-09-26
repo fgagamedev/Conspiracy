@@ -1,4 +1,5 @@
 #include "collision_manager.hpp"
+#include "config.h"
 #include "chair.hpp"
 #include "log.h"
 
@@ -7,7 +8,7 @@ Chair::Chair(std::string objectName, double positionX, double positionY,
                                                  positionX,
                                                  positionY,
                                                  width, height){
-        chairEffect = new Audio("assets/sounds/DRAG.wav", "EFFECT", 128);
+        chairEffect = new Audio(ASSETS_PATH("/sounds/DRAG.wav"), "EFFECT", 128);
         animator = new Animation(objectName, 1, 4, 0.5);
         animator->addAction("move",0,3);
         animator->addAction("idle",0,0);

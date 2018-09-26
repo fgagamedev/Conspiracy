@@ -1,4 +1,5 @@
 #include "door.hpp"
+#include "config.h"
 
 Door::Door(std::string objectName, double positionX, double positionY,
            int width, int height, std::string doorSide) : GameObject(objectName,
@@ -22,7 +23,7 @@ Door::Door(std::string objectName, double positionX, double positionY,
     }
 
     side = doorSide;
-    door_effect = new Audio("assets/sounds/DOOR.wav", "EFFECT", 90);
+    door_effect = new Audio(ASSETS_PATH("/sounds/DOOR.wav"), "EFFECT", 90);
 
     animator->setDrawSize(width,height);
     open = false;

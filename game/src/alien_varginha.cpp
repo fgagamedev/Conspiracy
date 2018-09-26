@@ -1,6 +1,7 @@
 #include "alien_varginha.hpp"
+#include "config.h"
 
-#define FILENAME "assets/sprites/varginha_sheet.png"
+#define FILENAME ASSETS_PATH("/sprites/varginha_sheet.png")
 #define WIDTH 10
 #define HEIGHT 15
 

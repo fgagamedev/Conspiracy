@@ -1,10 +1,11 @@
 #include "stage_three.hpp"
+#include "config.h"
 #include "chair.hpp"
 
 using namespace engine;
 #define PAPERQUANTITY 3
 #define STAGENUMBER 3
-StageThree::StageThree(int id, std::string newTiledFile) : GameScene (id, newTiledFile, "assets/sounds/TEMA3.wav"){
+StageThree::StageThree(int id, std::string newTiledFile) : GameScene (id, newTiledFile, ASSETS_PATH("/sounds/TEMA3.wav")){
 
 }
 

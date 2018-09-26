@@ -1,4 +1,5 @@
 #include "win_scene.hpp"
+#include "config.h"
 #include "button.hpp"
 
 #include <typeinfo>
@@ -7,8 +8,8 @@
 using namespace engine;
 
 WinScene::WinScene(int id) : Scene(id){
-    soundEffect = new Audio("assets/sounds/SELECT6.wav", "EFFECT",100);
-    background = new Animation("assets/sprites/win.png", 1, 5, 0.8);
+    soundEffect = new Audio(ASSETS_PATH("/sounds/SELECT6.wav"), "EFFECT",100);
+    background = new Animation(ASSETS_PATH("/sprites/win.png"), 1, 5, 0.8);
     background->addAction("win", 0, 4);
     background->setInterval("win");
 }
@@ -42,8 +43,8 @@ void WinScene::update(double timeElapsed){
 }
 
 void WinScene::load(){
-        gameObjectsList.push_back(std::pair<int, GameObject*>(1,new Button("assets/fonts/font.ttf", 700, 500, 500, 500, "Continue", 50)));
-        gameObjectsList.push_back(std::pair<int, GameObject*>(2,new Button("assets/fonts/font.ttf", 50, 500, 500, 500, "Menu", 50)));
+        gameObjectsList.push_back(std::pair<int, GameObject*>(1,new Button(ASSETS_PATH("/fonts/font.ttf"), 700, 500, 500, 500, "Continue", 50)));
+        gameObjectsList.push_back(std::pair<int, GameObject*>(2,new Button(ASSETS_PATH("/fonts/font.ttf"), 50, 500, 500, 500, "Menu", 50)));
         AnimationManager::instance.setBackgroundColor(Color{158,228,159, 125});
 
 }

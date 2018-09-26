@@ -1,5 +1,6 @@
 #include "guard.hpp"
-#define GUARDSPRITE "assets/sprites/seguranca_sheet.png"
+#include "config.h"
+#define GUARDSPRITE ASSETS_PATH("/sprites/seguranca_sheet.png")
 
 Guard::Guard(double positionX,
              double positionY,
@@ -13,7 +14,7 @@ Guard::Guard(double positionX,
                                             height){
 
         animator = new Animation(GUARDSPRITE, 1, 10, 0.5);
-        exclamation = new Animation("assets/sprites/exclamation.png",1, 1, 0.5);
+        exclamation = new Animation(ASSETS_PATH("/sprites/exclamation.png"),1, 1, 0.5);
 
         animator->addAction("right",6,9);
         animator->addAction("left",1,4);
@@ -256,7 +257,7 @@ void Guard::verifyDistance(GameObject* alien){
         double distance = sqrt((pow(getPositionX() - alien->getPositionX(), 2.0)) +  (pow(getPositionY() - alien->getPositionY(), 2.0)));
 // TODO Definir quando irá iniciar o percurso especial do guarda
     //std::cout << alien->getName() << std::endl;
-    if(alien->getName().compare("assets/sprites/varginha_sheet.png") == 0){
+    if(alien->getName().compare(ASSETS_PATH("/sprites/varginha_sheet.png")) == 0){
         //std::cout << "AQUI" << std::endl;
         if(distance < 150 && alien->isVisible() && !wayActive){
             detecting = true;

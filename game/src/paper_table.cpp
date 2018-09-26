@@ -1,4 +1,5 @@
 #include "paper_table.hpp"
+#include "config.h"
 #include "log.h"
 
 PaperTable::PaperTable(std::string objectName, double positionX, double positionY,
@@ -6,8 +7,8 @@ PaperTable::PaperTable(std::string objectName, double positionX, double position
                                                                          positionX,
                                                                          positionY,
                                                                          width, height){
-table = new Table("assets/sprites/mesa.png", positionX, positionY, width, height);
-paper = new Paper("assets/sprites/papeis(19X21).png", positionX + 20, positionY - 2, 10, 40);
+table = new Table(ASSETS_PATH("/sprites/mesa.png"), positionX, positionY, width, height);
+paper = new Paper(ASSETS_PATH("/sprites/papeis(19X21).png"), positionX + 20, positionY - 2, 10, 40);
 }
 
 PaperTable::~PaperTable(){

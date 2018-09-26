@@ -1,15 +1,16 @@
 #include "alien.hpp"
+#include "config.h"
 
 Alien::Alien(std::string objectName, double positionX, double positionY,
                                      int width, int height) : GameObject(objectName,
                                                                          positionX,
                                                                          positionY,
                                                                          width, height){
-    if(objectName.compare("assets/sprites/bilu_sheet.png") == 0){
+    if(objectName.compare(ASSETS_PATH("/sprites/bilu_sheet.png")) == 0){
         alienName = "Bilu";
-    }else if(objectName.compare("assets/sprites/varginha_sheet.png") == 0){
+    }else if(objectName.compare(ASSETS_PATH("/sprites/varginha_sheet.png")) == 0){
         alienName = "Varginha";
-    }else if(objectName.compare("assets/sprites/etemer_sheet.png") == 0){
+    }else if(objectName.compare(ASSETS_PATH("/sprites/etemer_sheet.png")) == 0){
         alienName = "Etemer";
     }
     animator = new Animation(objectName, 2, 10, 0.5);
@@ -26,7 +27,7 @@ Alien::Alien(std::string objectName, double positionX, double positionY,
     idleAnimationNumber = 5;
     blockMovement = false;
     inPosition = false;
-    movement_sound_effect = new Audio("assets/sounds/FOOTSTEP.wav", "EFFECT", 128);
+    movement_sound_effect = new Audio(ASSETS_PATH("/sounds/FOOTSTEP.wav"), "EFFECT", 128);
 }
 
 Alien::~Alien(){}

@@ -12,6 +12,7 @@
 #include "timer.hpp"
 #include "player.hpp"
 #include "camera_system.hpp"
+#include "config.h"
 
 #include <fstream>
 #include <vector>
@@ -21,9 +22,9 @@
 #endif
 
 //Defining constants for assets
-#define TABLEASSET "assets/sprites/mesa.png"
-#define FINISHPOINTASSET "assets/sprites/cenary/tapete.png"
-#define CHAIRASSET "assets/sprites/cadeira_sheet(20X27).png"
+#define TABLEASSET ASSETS_PATH("/sprites/mesa.png")
+#define FINISHPOINTASSET ASSETS_PATH("/sprites/cenary/tapete.png")
+#define CHAIRASSET ASSETS_PATH("/sprites/cadeira_sheet(20X27).png")
 
 using namespace engine;
 

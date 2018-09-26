@@ -2,8 +2,9 @@
 #include "collision_manager.hpp"
 #include "paper.hpp"
 #include "door_switch.hpp"
+#include "config.h"
 
-#define FILENAME "assets/sprites/bilu_sheet.png"
+#define FILENAME ASSETS_PATH("/sprites/bilu_sheet.png")
 #define WIDTH 19
 #define HEIGHT 22
 

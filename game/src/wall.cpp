@@ -1,4 +1,5 @@
 #include "wall.hpp"
+#include "config.h"
 #include "log.h"
 
 Wall::Wall(std::string objectName, double positionX, double positionY,
@@ -16,7 +17,7 @@ void Wall::update(double timeElapsed){
 }
 
 void Wall::draw(){
-    if(getName().compare("assets/sprites/cenary/parede2.png") == 0){
+    if(getName().compare(ASSETS_PATH("/sprites/cenary/parede2.png")) == 0){
         animator->draw(getPositionX(), getPositionY()-25);
     }else{
         animator->draw(getPositionX(), getPositionY());

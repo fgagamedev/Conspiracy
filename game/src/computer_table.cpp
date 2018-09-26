@@ -1,4 +1,5 @@
 #include "computer_table.hpp"
+#include "config.h"
 #include "log.h"
 
 ComputerTable::ComputerTable(std::string objectName, double positionX, double positionY,
@@ -6,8 +7,8 @@ ComputerTable::ComputerTable(std::string objectName, double positionX, double po
                                                                          positionX,
                                                                          positionY,
                                                                          width, height){
-table = new Table("assets/sprites/mesa.png", positionX, positionY, width, height);
-doorSwitch = new DoorSwitch("assets/sprites/PC_sprites(34X20).png", positionX + 15, positionY - 7, 34, 60);
+table = new Table(ASSETS_PATH("/sprites/mesa.png"), positionX, positionY, width, height);
+doorSwitch = new DoorSwitch(ASSETS_PATH("/sprites/PC_sprites(34X20).png"), positionX + 15, positionY - 7, 34, 60);
 }
 
 ComputerTable::~ComputerTable(){
